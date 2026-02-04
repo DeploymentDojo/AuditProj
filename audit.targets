@@ -6,7 +6,8 @@
   <Target Name="Auditing"
            Inputs="@(_Audit)"
            Outputs="$(AuditOutputFile)"
-           DependsOnTargets="_CalcuateAuditInputs">
+           DependsOnTargets="_CalcuateAuditInputs"
+           AfterTargets="AfterBuild">
     <Message Importance="high" Text="AuditOutputFile = $(AuditOutputFile)" />
     <Message Importance="high" Text="Audit = @(_Audit)" />
 
