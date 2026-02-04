@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <AuditOutputFile>default.audit</AuditOutputFile>
+    <AuditPropsImported>true</AuditPropsImported>
+  </PropertyGroup>
+</Project>

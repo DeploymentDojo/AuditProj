@@ -1,0 +1,23 @@
+<Project>
+  <Import Project="audit.props" Condition=" '$(AuditPropsImported)'!='true' " />
+
+
+
+  <Target Name="Auditing"
+           Inputs="@(_Audit)"
+           Outputs="$(AuditOutputFile)"
+           DependsOnTargets="_CalcuateAuditInputs">
+    <Message Importance="high" Text="AuditOutputFile = $(AuditOutputFile)" />
+    <Message Importance="high" Text="Audit = @(_Audit)" />
+
+    <WriteLinesToFile File="$(AuditOutputFile)"
+            Lines="@(_Audit->'&quot;%(FullPath)&quot; proj:%27%(DefiningProjectName)%27 modified: %(ModifiedTime) ')"
+            Overwrite="true" />
+  </Target>
+
+  <Target Name="_CalcuateAuditInputs">
+    <ItemGroup>
+      <_Audit Include="@(Audit)" Exclude="$(AuditOutputFile)" />
+    </ItemGroup>
+  </Target>
+</Project>

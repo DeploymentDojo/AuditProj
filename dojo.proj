@@ -1,0 +1,14 @@
+<Project>
+  <Import Project="audit.props" />
+
+  <ItemGroup>
+    <Audit Include="*.txt" />
+  </ItemGroup>
+
+  <!-- <Target Name="Test"
+          DependsOnTargets="Auditing">
+    <Message Importance="high" Text="Test shows Audit = @(Audit)" />
+  </Target> -->
+
+  <Import Project="audit.targets" />
+</Project>
