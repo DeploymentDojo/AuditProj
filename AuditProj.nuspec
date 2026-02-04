@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>DeploymentDojo.AuditProj</id>
-        <version>0.1</version>
+        <version>0.2</version>
         <description>This is an MSBuild extension that tracks ("audits") files in the build.</description>
         <authors>robmen</authors>
     </metadata>
 
     <files>
-      <file src="audit.props" target="build\DeploymentDojo.AuditProj.props" />
-      <file src="audit.targets" target="build\DeploymentDojo.AuditProj.targets" />
+      <file src="DeploymentDojo.AuditProj.props" target="build" />
+      <file src="DeploymentDojo.AuditProj.targets" target="build" />
     </files>
 </package>

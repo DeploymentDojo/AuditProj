@@ -1,7 +1,5 @@
 <Project>
-  <Import Project="audit.props" Condition=" '$(AuditPropsImported)'!='true' " />
-
-
+  <Import Project="DeploymentDojo.AuditProj.props" Condition=" '$(AuditPropsImported)'!='true' " />
 
   <Target Name="Auditing"
            Inputs="@(_Audit)"
